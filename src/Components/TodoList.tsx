@@ -5,15 +5,17 @@ import './styles.css';
 
 interface Props {
     todos: Todo[],
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
+    handleRemove: (e: React.FormEvent, id: number) => void,
+    handleCompletion: (e: React.FormEvent, id: number) => void
 }
 
-const TodoList: React.FC<Props> = ({todos, setTodos}) => {
+const TodoList: React.FC<Props> = ({todos, handleRemove, handleCompletion}) => {
     return(
         <div className="todos">
             {todos.map((todo) => (
                 <SingleTodo
-                    setTodos={setTodos}
+                    handleCompletion={handleCompletion}
+                    handleRemove={handleRemove}
                     todo={todo}
                     todos={todos}
                     key={todo.id}/>
