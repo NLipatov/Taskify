@@ -34,8 +34,13 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <span className='heading'>Taskify</span>
-      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
-      <TodoList todos={todoStateFromReducer} handleRemove={handleRemove} handleCompletion={handleCompletion}/>
+      <InputField todo={todo} 
+        setTodo={setTodo} 
+        handleAdd={handleAdd}/>
+      <TodoList 
+        todos={todoStateFromReducer} 
+        handleRemove={handleRemove} 
+        handleCompletion={handleCompletion}/>
     </div>
   );
 }
